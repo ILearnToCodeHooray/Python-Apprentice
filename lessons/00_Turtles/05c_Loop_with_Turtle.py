@@ -7,5 +7,10 @@ write a new program that uses a loop to draw a pentagon.
 ( You can cut and past most of it! )
 
 """
-
-... # Your code here
+import turtle
+turtle.setup (width=600, height=600)
+tina=turtle.Turtle()
+tina.shape('turtle')
+for i in range (5):
+    tina.forward(100)
+    tina.left(360/5)   
