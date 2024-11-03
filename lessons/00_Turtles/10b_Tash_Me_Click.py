@@ -47,4 +47,14 @@ def set_background_image(window, image_name):
     window.bgpic(image_path)
 
 set_background_image(screen, "emoji.png")
+
+def screen_clicked(x, y):
+    """Print the x and y coordinates of the screen when clicked.
+    and make the turtle move to the clicked location."""
+
+    print('You pressed: x=' + str(x) + ', y=' + str(y))
+
+    t.goto(x, y)
+
+screen.onclick(screen_clicked)
 turtle.done()
