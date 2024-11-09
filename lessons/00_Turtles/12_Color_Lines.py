@@ -13,11 +13,14 @@ tina = turtle.Turtle()                  # Create a turtle named tina
 tina.shape('turtle')                    # Set the shape of the turtle to a turtle
 tina.speed(2)                           # Make the turtle move as fast, but not too fast. 
 
+                    # Turn tina left by the left turn
 
 colors = [ 'red', 'blue', 'black', 'orange']    # define a list of colors
 
-for color in colors:                            # loop through the colors
-    ... # Your code here
+for color in colors:
+    tina.color(color)                            # loop through the colors
+    tina.forward(150)                   # Move tina forward by the forward distance
+    tina.left(90)   
 
 
 # 2) Make another square, but put the colors in reverse order, using a negative index. 
