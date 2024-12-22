@@ -33,7 +33,39 @@ app = App("Numbers Grid", layout="grid")
 
 # Create a 10x10 grid using nested loops
 # Or you can use a single loop and calculate the row and column
-
+new_row = 1
+for i in range(1,101):
+    for j in range(1):
+        if new_row%10 == 0:
+            if (i)%15 == 0:
+                print("🐍", end= ''' 
+''')
+                new_row = new_row+1
+            elif (i)%5 == 0:
+                print("🦡", end= ''' 
+''')
+                new_row = new_row+1
+            elif (i)%3 == 0:
+                print("🍄", end= ''' 
+''')
+                new_row = new_row+1
+            else:
+                print(i, end= ''' 
+''')
+                new_row = new_row+1
+        else:
+            if (i)%15 == 0:
+                print("🐍", end= ' ')
+                new_row = new_row+1
+            elif (i)%5 == 0:
+                print("🦡", end= ' ')
+                new_row = new_row+1
+            elif (i)%3 == 0:
+                print("🍄", end= ' ')
+                new_row = new_row+1
+            else:
+                print(i, end= ' ')
+                new_row = new_row+1            
 # In the loop, calculate or increment the number
 
 # Use % determing the display, using fizzbuzz rules
