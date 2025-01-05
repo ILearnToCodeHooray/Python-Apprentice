@@ -48,8 +48,10 @@ while not guess == n:
     guess = ask_integer("Guess a number between 1 and 100: ")
     if guess % 7 == 0:
         print("That is a very bad number starting over")
+        
         continue
     print("You guessed the right number!")
+    
 # In your loop:
 
     # Get the user's guess
