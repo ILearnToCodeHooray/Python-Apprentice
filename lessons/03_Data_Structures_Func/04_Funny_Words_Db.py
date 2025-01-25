@@ -22,7 +22,9 @@ an error message will be displayed and new definitions will not be added.
 
 
 # Implement the functions below
-
+db = {
+    "test": "test"
+    }
 
 def add_definition(db, key, value):
     """
@@ -39,11 +41,9 @@ def add_definition(db, key, value):
     If there are already 5 items in the database, an error message is displayed and the new item is not added.
     """
 
-    # Check the limit
-
     # Set the item in the database
-
-    pass
+    if not len(db) >= 5:
+        db[key]=value
 
 
 def delete_definition(db, key):
@@ -57,7 +57,7 @@ def delete_definition(db, key):
     Returns:
         None
     """
-
+    
     # Delete the item from db if it is present
 
     pass
@@ -90,12 +90,9 @@ def update_listbox(db):
 
     # This function will return a list of definitions to be displayed in the listbox, like
     # the one below. (For your function, you should set this list to the empty list)
-    l = [
-        "Item 1: Fake Definition 1",
-        "Item 2: Fake Definition 2",
-        "Item 3: fake Definition 3"
-    ]
-
+    l = []
+    for key in db:
+        l.append(key+": " + db[key])
     # Add each definition to a string
     # iterate over the dict's key-value pairs and turn them into
     # strings, then add the strings to the list with .append()
