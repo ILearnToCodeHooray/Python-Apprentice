@@ -15,8 +15,10 @@ def check_row(l):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
         """
-
-    return None
+    if ( all([e == X_MARK for e in l]) ) == True:
+        return X_MARK
+    if ( all([e == O_MARK for e in l]) ) == True:
+        return O_MARK
 
 def check_win(board):
     """Check if a player has won on a board
@@ -26,7 +28,23 @@ def check_win(board):
     Returns:
         The winner's token ( x or o ) if there is one, otherwise None
     """
+    allrows=[]
 
+    allrows.append(board[0])
+    allrows.append(board[1])
+    allrows.append(board[2])
+    allrows.append([board[0][2],board[1][2],board[2][2]])
+    allrows.append([board[0][1],board[1][1],board[2][1]])
+    allrows.append([board[0][0],board[1][0],board[2][0]])
+    allrows.append([board[0][0],board[1][1],board[2][2]])
+    allrows.append([board[0][2],board[1][1],board[2][0]])
+    for row in allrows:
+        if check_row(row) == X_MARK:
+            return X_MARK
+        elif check_row(row) == O_MARK:
+            return O_MARK
+        
+    print(board)
     return None
 
 # The following code is the main part of the program. It creates a GUI for the
