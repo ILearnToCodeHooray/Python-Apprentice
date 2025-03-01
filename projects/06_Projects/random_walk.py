@@ -37,8 +37,10 @@ def random_walk(walker, steps):
     steps (int): The number of steps to take
 
     """
-
-
+    for i in range(steps):
+        direction = random.choice([0, 90, 180, 270])
+        walker.left(direction)
+        walker.forward(10)
     # You can make the turle move randomly in either of two ways: randomly choosing a direction
     # or randomly choosing a angle to turn. You can use random.choice() to select a random element
     # from a list, like this: 

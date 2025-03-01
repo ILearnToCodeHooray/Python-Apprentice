@@ -33,12 +33,16 @@ def circle():
         t.forward(1)
 
 shape = input("What shape do you want to make?")
-
-if shape == "triangle":
-    triangle()
-elif shape == "square":
-    square()
-elif shape == "circle":
-    circle()
-else:
-    shape = input("Please enter a real shape.")
+done = 1
+while done == 1: 
+    if shape == "triangle":
+        triangle()
+        done = 0
+    elif shape == "square":
+        square()
+        done = 0
+    elif shape == "circle":
+        circle()
+        done = 0
+    else:
+        shape = input("Please enter a real shape.")
