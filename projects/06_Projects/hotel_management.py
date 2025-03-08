@@ -55,4 +55,5 @@ def in_or_out():
         individual_check_in(done, number, cost)
         check_in()
 while True:
+    name = simpledialog.askstring("What is your name")
     in_or_out()
