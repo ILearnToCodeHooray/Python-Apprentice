@@ -26,6 +26,7 @@ def individual_check_in(done, number, price):
                 price_word = str(cost)
                 messagebox.showinfo("Total", "That will add $" + price_word + " to your total.")
                 done = 1
+                rooms_left.remove(number)
                 if name in transactions:
                     transactions[name] += cost
                 else:   
@@ -45,10 +46,10 @@ def individual_check_in(done, number, price):
                     transactions[name] = cost
 
             else:
-                messagebox.showinfo("Valid number", "Please enter a valid room number")
+                messagebox.showinfo("Invalid number", "Please enter a valid room number")
 
         except ValueError:
-                messagebox.showinfo("Valid number", "Please enter a valid room number")
+                messagebox.showinfo("Invalid number", "Please enter a valid room number")
 
 def check_in():
     extra_rooms = simpledialog.askstring("extra rooms", "Will you be checking into any other rooms? (y/n)")
@@ -62,6 +63,7 @@ def check_out():
         confirm = simpledialog.askstring("Confirm", "Are you sure you want to check out from all rooms? (y/n)")
         if confirm == ("y"):
             del transactions[name]
+            return transactions
 
 def in_or_out():
     in_question = simpledialog.askstring("extra rooms", "Are you checking in? (y/n)")
@@ -72,10 +74,16 @@ def in_or_out():
         check_out()
 
 while True:
-    name = simpledialog.askstring("Name ask", '''What is your name? If you want to leave, press q, if you want to check transactions, press t''')
+    name = simpledialog.askstring("Home screen", '''If you want to leave, press q, if you want to check transactions, press t
+if you want to check what rooms are left press r, and if you want to check what rooms are being 
+used press u, and if you want to check in or out enter your name.''')
     if name == ("q"):
         break
     elif name == ("t"):
         messagebox.showinfo("Transactions", transactions)
+    elif name == ("r"):
+        messagebox.showinfo("Rooms still left", rooms_left)
+    elif name == ("u"):
+        messagebox.showinfo("Rooms_being_used", rooms_being_used)
     else:
         in_or_out()
